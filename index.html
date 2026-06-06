@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kue Rumahan Premium - Homemade Cake dengan bahan berkualitas tinggi dan rasa autentik. Pesan sekarang untuk pesanan spesial Anda.">
+    <meta name="theme-color" content="#d4714d">
+    <title>Kue Rumahan Premium - Homemade Cake Terbaik Indonesia</title>
+    <style>
+        :root {
+            --primary: #d4714d;
+            --primary-dark: #c2563a;
+            --secondary: #f4e4d7;
+            --accent: #8b5a3c;
+            --text-dark: #2a2a2a;
+            --text-light: #f9f7f4;
+            --border: #e8d4c4;
+            --success: #6b9b4f;
+            --gradient-warm: linear-gradient(135deg, #d4714d 0%, #c2563a 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', 'Garamond', serif;
+            color: var(--text-dark);
+            background: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: 'Georgia', serif;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-dark);
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-header {
+            background: var(--primary);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 113, 77, 0.2);
+        }
+
+        .cta-header:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 113, 77, 0.3);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            background: none;
+            padding: 8px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2.5px;
+            background: var(--text-dark);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 80px 0;
+            min-height: 100vh;
+        }
+
+        .hero-content {
+            animation: slideInLeft 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .hero-image {
+            animation: slideInRight 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .hero .subtitle {
+            color: var(--primary);
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 35px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-warm);
+            color: white;
+            box-shadow: 0 8px 25px rgba(212, 113, 77, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 113, 77, 0.35);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            height: 500px;
+        }
+
+        .hero-image-main {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .badge {
+            position: absolute;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge-1 {
+            bottom: 30px;
+            left: 20px;
+            animation: floatUp 3s ease-in-out infinite;
+        }
+
+        .badge-2 {
+            top: 30px;
+            right: 20px;
+            animation: floatUp 3s ease-in-out 0.5s infinite;
+        }
+
+        @keyframes floatUp {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .about {
+            padding: 100px 0;
+            background: var(--secondary);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .section-header .divider {
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .about-text p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.9;
+        }
+
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            color: var(--primary);
+            min-width: 30px;
+        }
+
+        .about-image {
+            position: relative;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .products {
+            padding: 100px 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: cardReveal 0.6s ease forwards;
+        }
+
+        @keyframes cardReveal {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+        .product-card:nth-child(5) { animation-delay: 0.5s; }
+        .product-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 113, 77, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: var(--secondary);
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-category {
+            font-size: 12px;
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .product-desc {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .product-price {
+            font-size: 24px;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .btn-order {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-order:hover {
+            background: var(--primary-dark);
+            transform: scale(1.02);
+        }
+
+        .advantages {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #2a2a2a 0%, #3d3d3d 100%);
+            color: white;
+        }
+
+        .advantages h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 48px;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+
+        .advantage-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: cardReveal 0.6s ease forwards;
+        }
+
+        .advantage-card:nth-child(1) { animation-delay: 0.1s; }
+        .advantage-card:nth-child(2) { animation-delay: 0.2s; }
+        .advantage-card:nth-child(3) { animation-delay: 0.3s; }
+        .advantage-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .advantage-card:hover {
+            background: rgba(212, 113, 77, 0.15);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .advantage-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .advantage-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .advantage-card p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        .testimonials {
+            padding: 100px 0;
+            background: var(--secondary);
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 48px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            opacity: 0;
+            animation: cardReveal 0.6s ease forwards;
+        }
+
+        .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .stars {
+            color: #ffc107;
+            font-size: 16px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .author-info h4 {
+            font-size: 15px;
+            margin-bottom: 2px;
+            color: var(--text-dark);
+        }
+
+        .author-info p {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .faq {
+            padding: 100px 0;
+        }
+
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 48px;
+        }
+
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: var(--secondary);
+        }
+
+        .faq-icon {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--secondary);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            padding: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .cta-section {
+            padding: 80px 20px;
+            background: var(--gradient-warm);
+            color: white;
+            border-radius: 20px;
+            text-align: center;
+            margin: 100px auto;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cta-section h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 35px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--primary);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s ease;
+            font-size: 14px;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(212, 113, 77, 0.2);
+            border-radius: 50%;
+            color: var(--primary);
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s ease;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: white;
+                padding: 20px;
+                gap: 0;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 12px 0;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 50px 0;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-image-wrapper {
+                height: 350px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .section-header h2 {
+                font-size: 36px;
+            }
+
+            .cta-section {
+                margin: 50px 0;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 18px;
+            }
+
+            .cta-header {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .advantages h2 {
+                font-size: 28px;
+            }
+
+            .cta-section h2 {
+                font-size: 24px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">🧁 Kue Rumahan</div>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#keunggulan">Keunggulan</a></li>
+                <li><a href="#testimoni">Testimoni</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="https://wa.me/6281234567890?text=Halo, saya ingin memesan kue" target="_blank" class="cta-header">Pesan Sekarang</a></li>
+            </ul>
+            <button class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container" id="home">
+            <div class="hero-content">
+                <div class="subtitle">Homemade Excellence</div>
+                <h1>Kue Lezat Dibuat dengan Cinta</h1>
+                <p>Rasakan kelezatan kue buatan rumahan dengan bahan premium pilihan. Setiap gigitan adalah cerita rasa yang autentik dan menggugah selera.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="window.open('https://wa.me/6281234567890?text=Halo, saya ingin memesan kue', '_blank')">
+                        📱 Pesan Sekarang
+                    </button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('produk').scrollIntoView()">
+                        Lihat Produk
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='grad1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f4e4d7;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23e8c4a8;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='500' fill='url(%23grad1)'/%3E%3Ccircle cx='200' cy='250' r='120' fill='%23d4714d' opacity='0.8'/%3E%3Cellipse cx='200' cy='220' rx='100' ry='110' fill='%23c2563a'/%3E%3Cpath d='M 150 250 Q 200 280 250 250' stroke='%23f4e4d7' stroke-width='3' fill='none' opacity='0.6'/%3E%3Ccircle cx='180' cy='200' r='20' fill='%23f4e4d7' opacity='0.7'/%3E%3Ccircle cx='220' cy='210' r='15' fill='%23f4e4d7' opacity='0.6'/%3E%3Ccircle cx='200' cy='280' r='25' fill='%23f4e4d7' opacity='0.5'/%3E%3Ctext x='200' y='450' font-size='28' text-anchor='middle' fill='%238b5a3c' font-weight='bold'%3E🍰%3C/text%3E%3C/svg%3E" alt="Kue Premium Homemade" class="hero-image-main">
+                    <div class="badge badge-1">✨ Fresh Daily</div>
+                    <div class="badge badge-2">🏆 Premium Quality</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about scroll-reveal" id="tentang">
+            <div class="section-header">
+                <h2>Tentang Kami</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="about-content container">
+                <div class="about-text">
+                    <h3>Dibuat dengan Passion & Dedikasi</h3>
+                    <p>Kue Rumahan dimulai dari sebuah passion untuk menciptakan kelezatan yang dapat dinikmati bersama keluarga dan orang-orang terkasih. Kami percaya bahwa setiap kue adalah karya seni yang mencerminkan cinta dan perhatian.</p>
+                    <p>Dengan pengalaman lebih dari 5 tahun, kami telah melayani ribuan pelanggan puas yang mempercayai kami untuk momen spesial mereka.</p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">🥚</div>
+                            <div>
+                                <strong>Bahan Berkualitas</strong>
+                                <p>Menggunakan bahan premium dari supplier terpercaya</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">👨‍🍳</div>
+                            <div>
+                                <strong>Resep Autentik</strong>
+                                <p>Formula rahasia yang telah disempurnakan bertahun-tahun</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🎁</div>
+                            <div>
+                                <strong>Kustomisasi Tersedia</strong>
+                                <p>Sesuaikan rasa dan desain sesuai keinginan Anda</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='grad2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f9d5a4;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23d4714d;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='%23f4e4d7'/%3E%3Ccircle cx='200' cy='150' r='80' fill='url(%23grad2)'/%3E%3Cpath d='M 150 180 L 150 280 Q 150 300 170 300 L 230 300 Q 250 300 250 280 L 250 180 Z' fill='%23c2563a'/%3E%3Crect x='160' y='120' width='80' height='25' fill='%23f4e4d7' opacity='0.8'/%3E%3Ccircle cx='180' cy='130' r='8' fill='%23f39c12'/%3E%3Ccircle cx='220' cy='135' r='6' fill='%23f39c12'/%3E%3Ccircle cx='200' cy='125' r='7' fill='%23e74c3c'/%3E%3Ctext x='200' y='350' font-size='32' text-anchor='middle' fill='%238b5a3c'%3E❤️ Homemade ❤️%3C/text%3E%3C/svg%3E" alt="Proses Pembuatan Kue">
+                </div>
+            </div>
+        </section>
+
+        <section class="products scroll-reveal" id="produk">
+            <div class="section-header container">
+                <h2>Produk Unggulan</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="products-grid container">
+                <div class="product-card">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='cake1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d4714d;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%238b5a3c;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='%23f4e4d7'/%3E%3Cellipse cx='150' cy='180' rx='90' ry='50' fill='url(%23cake1)'/%3E%3Cellipse cx='150' cy='140' rx='85' ry='45' fill='%23c2563a'/%3E%3Cellipse cx='150' cy='110' rx='80' ry='40' fill='%23d4714d'/%3E%3Crect x='120' y='80' width='60' height='15' fill='%23f39c12'/%3E%3Ccircle cx='130' cy='75' r='8' fill='%23e74c3c'/%3E%3Ccircle cx='170' cy='75' r='8' fill='%23e74c3c'/%3E%3Ccircle cx='150' cy='72' r='7' fill='%23f39c12'/%3E%3C/svg%3E" alt="Chocolate Lava Cake" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category">Cake</div>
+                        <h3 class="product-name">Chocolate Lava Cake</h3>
+                        <p class="product-desc">Kue cokelat dengan lava center yang lembut dan meleleh</p>
+                        <div class="product-price">Rp 75.000</div>
+                        <button class="btn-order" onclick="window.open('https://wa.me/6281234567890?text=Saya tertarik memesan Chocolate Lava Cake', '_blank')">Pesan Sekarang</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='cake2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f4d4a0;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23d4a847;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='%23f4e4d7'/%3E%3Cellipse cx='150' cy='180' rx='90' ry='50' fill='url(%23cake2)'/%3E%3Cellipse cx='150' cy='140' rx='85' ry='45' fill='%23e8b844'/%3E%3Cellipse cx='150' cy='110' rx='80' ry='40' fill='%23f4d4a0'/%3E%3Ccircle cx='130' cy='160' r='6' fill='%238b5a3c' opacity='0.5'/%3E%3Ccircle cx='170' cy='165' r='5' fill='%238b5a3c' opacity='0.5'/%3E%3Ccircle cx='150' cy='175' r='5' fill='%238b5a3c' opacity='0.5'/%3E%3Crect x='120' y='80' width='60' height='20' fill='%23f39c12' opacity='0.8'/%3E%3C/svg%3E" alt="Honey Butter Cake" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category">Cake</div>
+                        <h3 class="product-name">Honey Butter Cake</h3>
+                        <p class="product-desc">Kue lembut dengan rasa madu dan mentega yang kaya</p>
+                        <div class="product-price">Rp 65.000</div>
+                        <button class="btn-order" onclick="window.open('https://wa.me/6281234567890?text=Saya tertarik memesan Honey Butter Cake', '_blank')">Pesan Sekarang</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='cake3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f4a4c4;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23d46a8e;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='%23f4e4d7'/%3E%3Cellipse cx='150' cy='180' rx='90' ry='50' fill='url(%23cake3)'/%3E%3Cellipse cx='150' cy='140' rx='85' ry='45' fill='%23d46a8e'/%3E%3Cellipse cx='150' cy='110' rx='80' ry='40' fill='%23f4a4c4'/%3E%3Crect x='115' y='75' width='70' height='25' fill='%23ffd700' opacity='0.6'/%3E%3Ccircle cx='130' cy='95' r='6' fill='%23e74c3c'/%3E%3Ccircle cx='170' cy='95' r='6' fill='%23e74c3c'/%3E%3C/svg%3E" alt="Strawberry Cheesecake" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category">Cheesecake</div>
+                        <h3 class="product-name">Strawberry Cheesecake</h3>
+                        <p class="product-desc">Paduan sempurna keju krim dan strawberry segar</p>
+                        <div class="product-price">Rp 85.000</div>
+                        <button class="btn-order" onclick="window.open('https://wa.me/6281234567890?text=Saya tertarik memesan Strawberry Cheesecake', '_blank')">Pesan Sekarang</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='cake4' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23a0d995;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%236b9b4f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='%23f4e4d7'/%3E%3Cellipse cx='150' cy='180' rx='90' ry='50' fill='url(%23cake4)'/%3E%3Cellipse cx='150' cy='140' rx='85' ry='45' fill='%236b9b4f'/%3E%3Cellipse cx='150' cy='110' rx='80' ry='40' fill='%23a0d995'/%3E%3Crect x='120' y='80' width='60' height='20' fill='%23fff9e6' opacity='0.7'/%3E%3Ccircle cx='125' cy='160' r='5' fill='%23fff9e6' opacity='0.6'/%3E%3Ccircle cx='175' cy='165' r='5' fill='%23fff9e6' opacity='0.6'/%3E%3C/svg%3E" alt="Matcha Latte Cake" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category">Specialty</div>
+                        <h3 class="product-name">Matcha Latte Cake</h3>
+                        <p class="product-desc">Kue dengan cita rasa premium matcha yang lembut</p>
+                        <div class="product-price">Rp 80.000</div>
+                        <button class="btn-order" onclick="window.open('https://wa.me/6281234567890?text=Saya tertarik memesan Matcha Latte Cake', '_blank')">Pesan Sekarang</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='cake5' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23fff9e6;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23f0e68c;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='%23f4e4d7'/%3E%3Cellipse cx='150' cy='180' rx='90' ry='50' fill='url(%23cake5)'/%3E%3Cellipse cx='150' cy='140' rx='85' ry='45' fill='%23f0e68c'/%3E%3Cellipse cx='150' cy='110' rx='80' ry='40' fill='%23fff9e6'/%3E%3Ccircle cx='135' cy='155' r='8' fill='%23ffc107'/%3E%3Ccircle cx='165' cy='160' r='8' fill='%23ffc107'/%3E%3Ccircle cx='150' cy='170' r='8' fill='%23ffc107'/%3E%3C/svg%3E" alt="Lemon Drizzle Cake" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category">Cake</div>
+                        <h3 class="product-name">Lemon Drizzle Cake</h3>
+                        <p class="product-desc">Kue jeruk lemon yang segar dengan icing manis</p>
+                        <div class="product-price">Rp 70.000</div>
+                        <button class="btn-order" onclick="window.open('https://wa.me/6281234567890?text=Saya tertarik memesan Lemon Drizzle Cake', '_blank')">Pesan Sekarang</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Cdefs%3E%3ClinearGradient id='cake6' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f5d5c0;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23d4956b;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='250' fill='%23f4e4d7'/%3E%3Cellipse cx='150' cy='180' rx='90' ry='50' fill='url(%23cake6)'/%3E%3Cellipse cx='150' cy='140' rx='85' ry='45' fill='%23d4956b'/%3E%3Cellipse cx='150' cy='110' rx='80' ry='40' fill='%23f5d5c0'/%3E%3Crect x='130' y='85' width='40' height='20' fill='%23a0714c' opacity='0.6'/%3E%3Ccircle cx='140' cy='100' r='4' fill='%23d4714d'/%3E%3Ccircle cx='160' cy='100' r='4' fill='%23d4714d'/%3E%3C/svg%3E" alt="Caramel Walnut Cake" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category">Cake</div>
+                        <h3 class="product-name">Caramel Walnut Cake</h3>
+                        <p class="product-desc">Kue renyah dengan caramel dan kacang walnut asli</p>
+                        <div class="product-price">Rp 90.000</div>
+                        <button class="btn-order" onclick="window.open('https://wa.me/6281234567890?text=Saya tertarik memesan Caramel Walnut Cake', '_blank')">Pesan Sekarang</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="advantages scroll-reveal" id="keunggulan">
+            <div class="container">
+                <h2>Keunggulan Kami</h2>
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <div class="advantage-icon">🌿</div>
+                        <h3>Bahan Alami</h3>
+                        <p>Menggunakan bahan-bahan premium tanpa pengawet atau pewarna buatan</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon">👨‍🍳</div>
+                        <h3>Dibuat Fresh</h3>
+                        <p>Setiap pesanan dibuat fresh sesuai order Anda tanpa stock lama</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon">🏠</div>
+                        <h3>Homemade Quality</h3>
+                        <p>Dibuat di kitchen kami dengan standar kebersihan UMKM</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon">📦</div>
+                        <h3>Packaging Mewah</h3>
+                        <p>Kemasan premium yang siap untuk hadiah atau acara spesial</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials scroll-reveal" id="testimoni">
+            <div class="section-header container">
+                <h2>Testimoni Pelanggan</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="testimonials-grid container">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Kuenya sangat lezat dan fresh! Packaging-nya juga cantik sekali. Saya pesan lagi untuk ulang tahun keluarga. Recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SH</div>
+                        <div class="author-info">
+                            <h4>Siti Hartono</h4>
+                            <p>Jakarta, 2 minggu lalu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Chocolate Lava Cake-nya enak banget! Lacinnya benar-benar lava dan manis pas. Ini kue terbaik yang pernah saya makan dari homemade business!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">BR</div>
+                        <div class="author-info">
+                            <h4>Budi Raharjo</h4>
+                            <p>Surabaya, 1 bulan lalu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Pelayanannya cepat dan responsif! Kue untuk acara kantor saya sangat sukses. Semua orang bilang rasanya enak dan unik. Thanks!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DW</div>
+                        <div class="author-info">
+                            <h4>Dewi Wijaya</h4>
+                            <p>Bandung, 3 minggu lalu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq scroll-reveal" id="faq">
+            <div class="section-header container">
+                <h2>Pertanyaan Umum</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="faq-container container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Berapa lama pre-order kue Anda?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kami menerima pre-order minimal 2 hari sebelumnya. Untuk pesanan mendadak atau same-day, silakan hubungi WhatsApp kami untuk ketersediaan. Semakin awal dipesan, semakin banyak pilihan custom yang bisa kami buat untuk Anda.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Apakah bisa kustomisasi rasa dan topping?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tentu saja! Kami sangat terbuka dengan kustomisasi rasa, topping, dan design sesuai keinginan Anda. Silakan diskusikan detail kue impian Anda melalui WhatsApp dan kami akan memberikan harga spesial.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Bagaimana dengan pengiriman?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Untuk area Medan dan sekitarnya (radius 15 km), kami menyediakan layanan pengiriman gratis. Untuk area lebih jauh, ada biaya pengiriman sesuai jarak. Kue akan dikemas dengan aman dan dikirim dengan hati-hati.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Kue tahan berapa lama?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kue kami sebaiknya disimpan di suhu ruangan dan dimakan dalam 2-3 hari. Jika ingin tahan lebih lama, bisa disimpan di kulkas sampai 1 minggu. Untuk cheesecake, sebaiknya disimpan di kulkas maksimal 5 hari.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Apakah ada opsi pembayaran cicilan?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Untuk pesanan di atas 2 juta rupiah, kami bisa menawarkan sistem DP 50% dan sisanya saat pengambilan. Untuk pesanan reguler, kami menerima pembayaran langsung atau transfer bank. Hubungi kami untuk detail lebih lanjut.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Bagaimana jika kue rusak saat dikirim?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kami memastikan setiap kue dikemas dengan sangat hati-hati. Namun jika terjadi kerusakan saat pengiriman, kami siap mengganti dengan gratis (untuk pengiriman oleh kami). Buktikan dengan foto sebelum mengonsumsi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-section container scroll-reveal">
+            <h2>Siap untuk Kue Lezat Impian Anda?</h2>
+            <p>Jangan tunggu lagi! Pesan kue premium homemade kami sekarang dan rasakan kelezatannya</p>
+            <div class="cta-buttons">
+                <button class="btn btn-white" onclick="window.open('https://wa.me/6281234567890?text=Halo, saya ingin memesan kue custom. Bisa dijelaskan pilihan yang tersedia?', '_blank')">Hubungi Kami</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🧁 Kue Rumahan</h3>
+                    <p style="font-size: 14px; color: rgba(255,255,255,0.7); margin-top: 10px;">Homemade cake dengan cinta untuk setiap momen spesial Anda.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/6281234567890" target="_blank" title="WhatsApp">💬</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="Facebook">👍</a>
+                        <a href="mailto:info@kuerumahan.com" title="Email">📧</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#tentang">Tentang Kami</a></li>
+                        <li><a href="#produk">Produk</a></li>
+                        <li><a href="#testimoni">Testimoni</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <ul>
+                        <li>📱 <a href="tel:6281234567890">+62 812-3456-7890</a></li>
+                        <li>💬 <a href="https://wa.me/6281234567890" target="_blank">WhatsApp Chat</a></li>
+                        <li>📍 Medan, Sumatera Utara</li>
+                        <li>⏰ Buka Senin-Minggu 8am-9pm</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Informasi</h3>
+                    <ul>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                        <li><a href="#">Panduan Pesan</a></li>
+                        <li><a href="#">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kue Rumahan Premium. Semua hak cipta dilindungi. | Dibuat dengan ❤️ untuk Anda</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                document.querySelectorAll('.faq-item').forEach(other => {
+                    if (other !== item) other.classList.remove('active');
+                });
+                item.classList.toggle('active');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
