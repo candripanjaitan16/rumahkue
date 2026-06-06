@@ -35,6 +35,14 @@
             background: var(--text-light);
             line-height: 1.6;
             overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        html {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -59,6 +67,12 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 24px;
+            }
         }
 
         header {
@@ -139,6 +153,7 @@
             cursor: pointer;
             background: none;
             padding: 8px;
+            z-index: 101;
         }
 
         .menu-toggle span {
@@ -147,6 +162,33 @@
             background: var(--text-dark);
             border-radius: 2px;
             transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        body.menu-open::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 98;
         }
 
         .hero {
@@ -804,33 +846,49 @@
 
         @media (max-width: 768px) {
             .nav-links {
-                display: none;
-                position: absolute;
-                top: 60px;
-                left: 0;
+                position: fixed;
+                top: 0;
                 right: 0;
+                height: 100vh;
+                width: 80vw;
+                max-width: 300px;
                 flex-direction: column;
                 background: white;
-                padding: 20px;
-                gap: 0;
-                border-bottom: 1px solid var(--border);
+                padding: 80px 30px 40px;
+                gap: 25px;
+                border-left: 1px solid var(--border);
+                z-index: 99;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+                overflow-y: auto;
             }
 
             .nav-links.active {
-                display: flex;
+                transform: translateX(0);
             }
 
             .nav-links li {
-                padding: 12px 0;
-                border-bottom: 1px solid var(--border);
+                padding: 0;
+                border-bottom: none;
             }
 
             .nav-links a::after {
                 display: none;
             }
 
+            .nav-links a {
+                font-size: 16px;
+                padding: 10px 0;
+            }
+
+            .nav-links a:hover {
+                color: var(--primary);
+            }
+
             .menu-toggle {
                 display: flex;
+                z-index: 100;
             }
 
             .hero {
@@ -861,7 +919,8 @@
             }
 
             .cta-section {
-                margin: 50px 0;
+                margin: 50px 24px;
+                padding: 60px 24px;
             }
 
             .cta-section h2 {
@@ -1278,13 +1337,25 @@
         const navLinks = document.querySelector('.nav-links');
 
         menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
         });
 
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
                 navLinks.classList.remove('active');
+                document.body.classList.remove('menu-open');
             });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav') && navLinks.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
         });
 
         const observerOptions = {
